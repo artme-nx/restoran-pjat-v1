@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restoran Pjat — Šibenik · Moderna dalmatinska kuhinja</title>
+<meta name="description" content="Restoran Pjat, Šibenik — #1 na TripAdvisoru. Riba iz mora, vino s brda, kamen staroga grada. Moderna dalmatinska kuhinja u srcu UNESCO Šibenika. Rezervirajte stol." />
+<meta property="og:title" content="Restoran Pjat — Šibenik" />
+<meta property="og:description" content="Riba iz mora. Vino s brda. Sve ostalo — priča. Moderna dalmatinska kuhinja u srcu Šibenika." />
+<meta property="og:type" content="restaurant" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg-dark:#1A1A1A;
+  --bg-soft:#212020;
+  --bg-base:#F5F1E8;
+  --cream:#EFE7D7;
+  --text-primary:#2C2C2C;
+  --accent-terra:#B5784A;
+  --accent-gold:#C9A86A;
+  --accent-sage:#6B7B5E;
+  --mid-tone:#9C8C7C;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'DM Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{background:var(--bg-dark);color:var(--cream);font-family:var(--font-body);font-weight:300;font-size:17px;line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.08;letter-spacing:.005em}
+.eyebrow{font-family:var(--font-body);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-gold);font-weight:400}
+.serif-i{font-style:italic}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;width:100%;z-index:200;transition:background .4s ease,padding .4s ease;padding:26px 0}
+header.scrolled{background:rgba(20,20,20,.92);backdrop-filter:blur(10px);padding:16px 0;border-bottom:1px solid rgba(201,168,106,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-size:26px;font-weight:600;letter-spacing:.04em;color:var(--cream)}
+.logo span{color:var(--accent-terra)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);opacity:.85;transition:opacity .3s,color .3s}
+.nav-links a:hover{opacity:1;color:var(--accent-gold)}
+.btn-res{font-family:var(--font-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bg-dark);background:var(--accent-gold);padding:13px 22px;border-radius:2px;border:none;cursor:pointer;transition:background .3s,transform .3s}
+.btn-res:hover{background:var(--cream);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{width:26px;height:2px;background:var(--cream);transition:.3s}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,.55) 0%,rgba(20,20,20,.32) 40%,rgba(20,20,20,.72) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;padding:0 24px;max-width:880px}
+.plate-ring{position:relative;display:inline-flex;align-items:center;justify-content:center;width:min(74vw,520px);height:min(74vw,520px);margin:0 auto;border-radius:50%;border:1px solid rgba(201,168,106,.45)}
+.plate-ring::before{content:"";position:absolute;inset:18px;border-radius:50%;border:1px solid rgba(239,231,215,.16)}
+.hero h1{font-size:clamp(44px,8vw,92px);color:#fff;font-weight:500}
+.hero .tag{font-size:clamp(20px,3.4vw,32px);font-style:italic;color:var(--cream);margin-top:18px;font-weight:400}
+.hero .eyebrow{margin-bottom:20px;display:inline-block}
+.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);opacity:.7;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue i{width:1px;height:42px;background:var(--accent-gold);display:block;animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* SECTIONS */
+section{position:relative}
+.pad{padding:120px 0}
+.reveal{opacity:0;transform:translateY(26px)}
+.manifest{background:var(--bg-dark);text-align:center}
+.manifest .inner{max-width:680px;margin:0 auto}
+.manifest p{font-family:var(--font-display);font-size:clamp(24px,3.4vw,34px);line-height:1.45;color:var(--cream);font-weight:400}
+.manifest .lead{color:var(--accent-terra);font-style:italic}
+.sec-head{margin-bottom:54px}
+.sec-head h2{font-size:clamp(34px,5vw,58px);color:var(--cream)}
+.sec-head .eyebrow{display:block;margin-bottom:16px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,106,.5),transparent);margin:0 auto;max-width:1280px}
+
+/* MENU */
+.menu{background:var(--bg-soft)}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 64px}
+.dish{padding:22px 0;border-bottom:1px solid rgba(239,231,215,.1)}
+.dish-top{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.dish h3{font-size:25px;color:var(--cream);font-weight:500}
+.dish .mark{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-gold);white-space:nowrap}
+.dish p{font-size:15px;color:var(--mid-tone);margin-top:7px;line-height:1.6}
+.menu-note{text-align:center;margin-top:44px;font-style:italic;font-family:var(--font-display);font-size:20px;color:var(--mid-tone)}
+
+/* CHEF */
+.chef{background:var(--bg-dark)}
+.chef-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.chef-text h2{font-size:clamp(32px,4.4vw,50px);color:var(--cream);margin-bottom:24px}
+.chef-text p{color:var(--cream);opacity:.82;margin-bottom:18px;font-size:16.5px}
+.chef-text .sign{font-family:var(--font-display);font-style:italic;font-size:24px;color:var(--accent-terra);margin-top:18px}
+.chef-photo{position:relative;overflow:hidden;border-radius:3px;height:560px}
+.chef-photo img{width:100%;height:120%;object-fit:cover;will-change:transform}
+
+/* GALLERY */
+.gallery{background:var(--bg-soft)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
+.gal-grid figure{overflow:hidden;border-radius:3px}
+.gal-grid img{width:100%;height:100%;object-fit:cover;filter:sepia(.28) contrast(1.05) saturate(.9);transition:transform .9s ease,filter .6s ease}
+.gal-grid figure:hover img{transform:scale(1.06);filter:sepia(.1) contrast(1.05) saturate(1)}
+.gal-grid .tall{grid-row:span 2}
+.gal-grid .wide{grid-column:span 2}
+
+/* LOCATION */
+.location{background:var(--bg-dark)}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.loc-info h2{font-size:clamp(32px,4.4vw,50px);color:var(--cream);margin-bottom:28px}
+.loc-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(239,231,215,.1)}
+.loc-row .k{min-width:120px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-gold);padding-top:5px}
+.loc-row .v{color:var(--cream);opacity:.9}
+.loc-row .v a{color:var(--accent-terra)}
+.map-wrap{border-radius:3px;overflow:hidden;border:1px solid rgba(201,168,106,.25);min-height:420px}
+.map-wrap iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+/* FOOTER */
+footer{background:#141414;padding:80px 0 40px;text-align:center}
+.footer-logo{font-family:var(--font-display);font-size:42px;font-weight:600;color:var(--cream)}
+.footer-logo span{color:var(--accent-terra)}
+.footer-tag{font-style:italic;font-family:var(--font-display);font-size:20px;color:var(--mid-tone);margin:14px 0 34px}
+.footer-meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;font-size:14px;color:var(--cream);opacity:.8}
+.footer-meta a{color:var(--accent-gold)}
+.copyright{margin-top:46px;font-size:12px;letter-spacing:.1em;color:var(--mid-tone)}
+
+/* RESERVATION PANEL */
+.panel-overlay{position:fixed;inset:0;background:rgba(10,10,10,.6);z-index:998;opacity:0;pointer-events:none;transition:opacity .4s}
+.panel-overlay.open{opacity:1;pointer-events:all}
+.res-panel{position:fixed;top:0;right:0;width:min(440px,100vw);height:100vh;background:var(--bg-base);color:var(--text-primary);z-index:999;transform:translateX(100%);transition:transform .5s cubic-bezier(.7,0,.2,1);overflow-y:auto;padding:48px 40px}
+.res-panel.open{transform:translateX(0)}
+.res-panel h3{font-size:36px;color:var(--text-primary);margin-bottom:8px}
+.res-panel .sub{color:var(--mid-tone);font-size:15px;margin-bottom:30px}
+.res-close{position:absolute;top:26px;right:28px;background:none;border:none;font-size:30px;cursor:pointer;color:var(--text-primary);line-height:1}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-tone);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid #d8cdb8;background:#fff;font-family:var(--font-body);font-size:15px;color:var(--text-primary);border-radius:2px}
+.field textarea{resize:vertical;min-height:78px}
+.panel-submit{width:100%;background:var(--bg-dark);color:var(--cream);border:none;padding:16px;font-family:var(--font-body);font-size:13px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .3s}
+.panel-submit:hover{background:var(--accent-terra)}
+.panel-phone{margin-top:24px;text-align:center;font-size:14px;color:var(--mid-tone)}
+.panel-phone a{color:var(--accent-terra);font-weight:500}
+
+/* MOBILE */
+.mobile-menu{position:fixed;inset:0;background:var(--bg-dark);z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{font-family:var(--font-display);font-size:34px;color:var(--cream)}
+.mobile-menu .mclose{position:absolute;top:26px;right:28px;background:none;border:none;font-size:36px;color:var(--cream);cursor:pointer}
+
+@media(max-width:900px){
+  .chef-grid,.menu-grid,.loc-grid{grid-template-columns:1fr;gap:40px}
+  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .gal-grid .wide{grid-column:span 2}
+  .chef-photo{height:420px}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  header .btn-res{display:none}
+  .pad{padding:80px 0}
+  .wrap{padding:0 22px}
+  .gal-grid{grid-template-columns:1fr}
+  .gal-grid .tall,.gal-grid .wide{grid-row:auto;grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Pjat<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#manifest">Filozofija</a>
+      <a href="#menu">Jelovnik</a>
+      <a href="#chef">Priča</a>
+      <a href="#gallery">Ambijent</a>
+      <a href="#location">Lokacija</a>
+    </nav>
+    <button class="btn-res" data-open-res>Rezerviraj stol</button>
+    <button class="burger" id="burger" aria-label="Izbornik"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mclose" id="mclose" aria-label="Zatvori">&times;</button>
+  <a href="#manifest" class="m-link">Filozofija</a>
+  <a href="#menu" class="m-link">Jelovnik</a>
+  <a href="#chef" class="m-link">Priča</a>
+  <a href="#gallery" class="m-link">Ambijent</a>
+  <a href="#location" class="m-link">Lokacija</a>
+  <button class="btn-res" data-open-res style="margin-top:10px">Rezerviraj stol</button>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80')"></div>
+  <div class="hero-content">
+    <div class="plate-ring">
+      <div>
+        <span class="eyebrow">Šibenik · Stari grad · od mora</span>
+        <h1>Restoran Pjat</h1>
+        <p class="tag">Riba iz mora. Vino s brda.<br/>Sve ostalo — priča.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Otkrijte</span><i></i></div>
+</section>
+
+<!-- MANIFEST -->
+<section class="manifest pad reveal" id="manifest">
+  <div class="wrap inner">
+    <span class="eyebrow">Pjat — dalmatinski za tanjur</span>
+    <p style="margin-top:22px"><span class="lead">Pjat je ono što ostane kad sve drugo utihne</span> — tanjur pred vama, miris mora koji je jutros bio val, kruh koji se lomi rukama i vino koje pamti brda iznad Krke. U Šibeniku, gradu od kamena i svjetlosti, kuhamo ono što nam donese dan.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MENU -->
+<section class="menu pad reveal" id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Sezonski jelovnik · ulov dana</span>
+      <h2>S mora, na tanjur</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-top"><h3>Sirova orada</h3><span class="mark">Predjelo</span></div><p>Tanko narezana orada iz kvarnerskog uzgoja, maslinovo ulje s Krke, korice limuna i kapari iz Skradina.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Šibenska fritaja</h3><span class="mark">Predjelo</span></div><p>Divlje šparoge s polja iznad grada, jaja s domaćeg uzgoja i mladi luk — proljeće u jednom zalogaju.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Crni rižot s sipom</h3><span class="mark">Primarno</span></div><p>Sipa lovljena pred Zlarinom, rižoto crn od njezina tinta, kap prošeka i pečeni badem.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Brodet po šibenski</h3><span class="mark">Primarno</span></div><p>Tri vrste bijele ribe i škampi, sporo kuhani u rajčici i crnom vinu, uz palentu od domaćeg kukuruza.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Lovrata na žaru</h3><span class="mark">Glavno</span></div><p>Cijela divlja lovrata pečena na maslini, blitva s mladim krumpirom i naše hladno tiješteno ulje.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Tunj iz Jadrana</h3><span class="mark">Glavno</span></div><p>Steak crvenog tunja kratko pečen, glazura od smokve i ružmarina, pire od pečene cikle.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Rožata s lavandom</h3><span class="mark">Slatko</span></div><p>Tradicionalna dalmatinska krema s karamelom i laticama lavande s otoka, prošek uz bok.</p></div>
+      <div class="dish"><div class="dish-top"><h3>Smokve u prošeku</h3><span class="mark">Slatko</span></div><p>Pečene svježe smokve, kremasti sir s Drniša, med kadulje i hrskavi badem.</p></div>
+    </div>
+    <p class="menu-note">Jelovnik se mijenja s ulovom i godišnjim dobom. Pitajte za ribu dana.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHEF -->
+<section class="chef pad reveal" id="chef">
+  <div class="wrap chef-grid">
+    <div class="chef-text">
+      <span class="eyebrow">Naša priča</span>
+      <h2 style="margin-top:14px">Tanjur koji pamti more</h2>
+      <p>Pjat je nastao iz jednostavne misli: najbolji ribar i najbolji vinar žive na sat vremena jedan od drugoga, a između njih je Šibenik. Svako jutro biramo ribu na rivi, povrće s polja iznad grada i ulje iz maslinika koje već generacijama pripada istim obiteljima.</p>
+      <p>Ne kompliciramo. Pustimo da namirnica govori, a mi joj samo damo vatru, sol i poštovanje. To je modernija dalmatinska kuhinja — ukorijenjena u tradiciji, ali bez straha od nove ideje na tanjuru.</p>
+      <p class="sign">— Obitelj Pjat, Trg Pavla Šubića I</p>
+    </div>
+    <div class="chef-photo"><img id="chefImg" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1000&q=80" alt="Chef priprema jelo" loading="lazy" /></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GALLERY -->
+<section class="gallery pad reveal" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ambijent · kamen i svjetlo</span>
+      <h2>Stol u starom gradu</h2>
+    </div>
+    <div class="gal-grid">
+      <figure class="tall"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Interijer restorana" loading="lazy" /></figure>
+      <figure class="wide"><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1000&q=80" alt="Plated seafood" loading="lazy" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1535007813616-79dc02ba4021?auto=format&fit=crop&w=700&q=80" alt="Svježa riba" loading="lazy" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=80" alt="Jelo na tanjuru" loading="lazy" /></figure>
+      <figure class="wide"><img src="https://images.unsplash.com/photo-1514516345957-556ca7d90a29?auto=format&fit=crop&w=1000&q=80" alt="Šibenik stari grad" loading="lazy" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=80" alt="Priprema jela" loading="lazy" /></figure>
+      <figure><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=700&q=80" alt="Stol s jelom" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LOCATION -->
+<section class="location pad reveal" id="location">
+  <div class="wrap loc-grid">
+    <div class="loc-info">
+      <span class="eyebrow">Lokacija &amp; radno vrijeme</span>
+      <h2 style="margin-top:14px">Nađite nas</h2>
+      <div class="loc-row"><div class="k">Adresa</div><div class="v">Trg Pavla Šubića I 3<br/>22000 Šibenik, Hrvatska</div></div>
+      <div class="loc-row"><div class="k">Telefon</div><div class="v"><a href="tel:+38598335070">+385 98 335 070</a></div></div>
+      <div class="loc-row"><div class="k">Radno vrijeme</div><div class="v">Pon – Ned: 12:00 – 23:00<br/>Kuhinja do 22:30</div></div>
+      <div class="loc-row"><div class="k">Priznanje</div><div class="v">#1 na TripAdvisoru u Šibeniku · 4.6 ★ · 417 recenzija</div></div>
+      <button class="btn-res" data-open-res style="margin-top:28px">Rezerviraj stol</button>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=Restoran+Pjat+Sibenik&output=embed" loading="lazy" title="Karta — Restoran Pjat Šibenik"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-logo">Pjat<span>.</span></div>
+    <p class="footer-tag">Riba iz mora. Vino s brda. Sve ostalo — priča.</p>
+    <div class="footer-meta">
+      <span>Trg Pavla Šubića I 3, Šibenik</span>
+      <a href="tel:+38598335070">+385 98 335 070</a>
+      <a href="mailto:pjat@yahoo.com">pjat@yahoo.com</a>
+    </div>
+    <p class="copyright">© 2026 Restoran Pjat · Moderna dalmatinska kuhinja u srcu Šibenika</p>
+  </div>
+</footer>
+
+<!-- RESERVATION PANEL -->
+<div class="panel-overlay" id="panelOverlay"></div>
+<aside class="res-panel" id="resPanel" aria-label="Rezervacija stola">
+  <button class="res-close" id="resClose" aria-label="Zatvori">&times;</button>
+  <h3>Rezervirajte stol</h3>
+  <p class="sub">Veselimo se vašem dolasku u srce staroga Šibenika.</p>
+  <form id="resForm">
+    <div class="field"><label>Ime i prezime</label><input type="text" name="ime" required /></div>
+    <div class="field"><label>Telefon</label><input type="tel" name="tel" required /></div>
+    <div class="field"><label>Datum</label><input type="date" name="datum" required /></div>
+    <div class="field"><label>Vrijeme</label><input type="time" name="vrijeme" required /></div>
+    <div class="field"><label>Broj gostiju</label><select name="gosti"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select></div>
+    <div class="field"><label>Napomena</label><textarea name="napomena" placeholder="Posebne želje, alergije…"></textarea></div>
+    <button type="submit" class="panel-submit">Pošalji upit</button>
+  </form>
+  <p class="panel-phone">Ili nas nazovite: <a href="tel:+38598335070">+385 98 335 070</a></p>
+</aside>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Lenis */
+let lenis;
+if(!reduce){
+  lenis = new Lenis({duration:1.2, easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)), smoothWheel:true});
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
+  requestAnimationFrame(raf);
+}
+
+/* Header scroll state */
+const header = document.getElementById('header');
+const onScroll = ()=>{ header.classList.toggle('scrolled', window.scrollY>80); };
+window.addEventListener('scroll', onScroll); onScroll();
+
+/* Smooth anchors */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(!t) return; e.preventDefault();
+    closeMobile();
+    if(lenis) lenis.scrollTo(t,{offset:-10}); else t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* GSAP reveals */
+if(!reduce && window.gsap){
+  gsap.registerPlugin(ScrollTrigger);
+  if(lenis){ lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(t=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0); }
+
+  /* breathing zoom on load */
+  gsap.fromTo('#heroBg',{scale:1.04},{scale:1,duration:2.4,ease:'power2.out'});
+  /* scroll zoom hero */
+  gsap.to('#heroBg',{scale:1.12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.4}});
+  /* hero content fade in */
+  gsap.from('.hero-content',{opacity:0,y:24,duration:1.4,delay:.3,ease:'power3.out'});
+
+  /* section reveals */
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 82%'}});
+  });
+
+  /* word-by-word H2 reveal */
+  gsap.utils.toArray('.sec-head h2, .manifest p, .chef-text h2').forEach(el=>{
+    if(el.dataset.split) return; el.dataset.split=1;
+    const words = el.textContent.split(' ');
+    el.innerHTML = words.map(w=>`<span style="display:inline-block;overflow:hidden;vertical-align:top"><span class="wi" style="display:inline-block">${w}&nbsp;</span></span>`).join('');
+    gsap.from(el.querySelectorAll('.wi'),{yPercent:110,duration:.8,stagger:.05,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}});
+  });
+
+  /* chef parallax */
+  gsap.fromTo('#chefImg',{yPercent:-8},{yPercent:8,ease:'none',scrollTrigger:{trigger:'.chef',start:'top bottom',end:'bottom top',scrub:1}});
+}else{
+  document.querySelectorAll('.reveal').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
+}
+
+/* Reservation panel */
+const overlay=document.getElementById('panelOverlay');
+const panel=document.getElementById('resPanel');
+function openRes(){overlay.classList.add('open');panel.classList.add('open');document.body.style.overflow='hidden';if(lenis)lenis.stop();}
+function closeRes(){overlay.classList.remove('open');panel.classList.remove('open');document.body.style.overflow='';if(lenis)lenis.start();}
+document.querySelectorAll('[data-open-res]').forEach(b=>b.addEventListener('click',openRes));
+document.getElementById('resClose').addEventListener('click',closeRes);
+overlay.addEventListener('click',closeRes);
+document.getElementById('resForm').addEventListener('submit',e=>{e.preventDefault();alert('Hvala! Vaš upit za rezervaciju je zaprimljen. Javit ćemo vam se uskoro na ostavljeni broj.');closeRes();});
+
+/* Mobile menu */
+const mm=document.getElementById('mobileMenu');
+function closeMobile(){mm.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('burger').addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden';});
+document.getElementById('mclose').addEventListener('click',closeMobile);
+document.querySelectorAll('.m-link').forEach(a=>a.addEventListener('click',closeMobile));
+</script>
+</body>
+</html>

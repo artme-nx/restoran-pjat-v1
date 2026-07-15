@@ -1,5 +1,0 @@
-Restoran Pjat — v1 (Dark evening, plate-forward)
-Live URL: https://artme-nx.github.io/restoran-pjat-v1/
-Repo URL: https://github.com/artme-nx/restoran-pjat-v1
-Account: artme-nx
-Objavljeno: 2026-06-21
